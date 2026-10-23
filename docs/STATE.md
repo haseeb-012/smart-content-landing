@@ -1,5 +1,12 @@
 # Landing — current state (2026-10-23)
 
+## ▶ Resume here (status at end of 2026-10-23)
+
+Full status + remaining steps: `smart-content-backend/docs/STATE.md`. Landing specifics:
+- No code changes needed for launch; deploy to Vercel with `NEXT_PUBLIC_DASHBOARD_URL` (online dashboard) and `NEXT_PUBLIC_MCP_URL` (`https://<backend>/mcp`).
+- Pricing CTAs → dashboard `/signup?plan=&cycle=`; Stripe test checkout happens in the dashboard.
+- After the dashboard UI is final, regenerate `public/screens/*.png` (see below) so the site shows the current app.
+
 Run: `npm install && npm run dev` → http://localhost:3000 (set `NEXT_PUBLIC_DASHBOARD_URL` for login/signup links; default http://localhost:3001)
 
 Pages: `/` (hero + app preview, features carousel, how it works, outliers band, testimonials + CTA, pricing with monthly/yearly + test-mode badge, FAQ tabs, walkthrough), `/mcp`, `/collections` (working search/filter/sort), `/legal/privacy-policy`, `/legal/terms-of-service` (drafts), `/affiliate` (inactive).
