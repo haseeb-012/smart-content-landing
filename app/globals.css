@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/*
+  Smart Content tokens. Sizes, spacing and surfaces are measured from the reference
+  (see smart-content-backend/docs/research/REA_PUBLIC_PAGES.md). The accent color is ours.
+*/
+:root {
+  --page: #020814;
+  --panel: #040e22;
+  --panel-2: #0a1630;
+  --nav: rgb(21 34 60 / 0.66);
+  --chip: #15223c;
+  --line: rgb(255 255 255 / 0.1);
+  --line-soft: rgb(255 255 255 / 0.04);
+  --text: rgb(255 255 255 / 0.8);
+  --text-dim: rgb(255 255 255 / 0.55);
+  --accent: #1a5cff;
+  --accent-strong: #0a45e0;
+  --accent-glow: rgb(26 92 255 / 0.5);
+  --good: #3fd08a;
+  --views: #5aa2ff;
+  --warn: #ff9a4d;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-nav: var(--nav);
+  --color-chip: var(--chip);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-text: var(--text);
+  --color-dim: var(--text-dim);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-good: var(--good);
+  --color-views: var(--views);
+  --color-warn: var(--warn);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-host);
+  --breakpoint-mob: 30rem;
+  --breakpoint-land: 48rem;
+  --breakpoint-tab: 62rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--page);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--page);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.h1 {
+  font-family: var(--font-host);
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.h2 {
+  font-family: var(--font-host);
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+@media (max-width: 48rem) {
+  .h1 { font-size: 40px; line-height: 1.05; }
+  .h2 { font-size: 32px; }
+}
+
+/* Soft top glow used behind heroes and section bands */
+.glow-top {
+  background: radial-gradient(60% 55% at 50% 0%, rgb(26 92 255 / 0.24), transparent 70%);
+}
+.glow-panel {
+  box-shadow: 0 0 80px -10px var(--accent-glow);
+}
+.horizon {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent) 20%, #9ec3ff 50%, var(--accent) 80%, transparent);
+  box-shadow: 0 0 40px 6px var(--accent-glow);
+}
+.grid-bg {
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(70% 60% at 50% 30%, #000 30%, transparent 80%);
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
